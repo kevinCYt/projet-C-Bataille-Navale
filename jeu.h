@@ -5,6 +5,8 @@
 #ifndef JEU_H
 #define JEU_H
 #include "plateau.h"
+#include "bateau.h"
+#include "jeu.h"
 ;
 
 /**
@@ -27,11 +29,14 @@ struct Jeu {
 };
 
 
-/*
-struct Jeu {
-	struct Plateau joueur;
-	struct Plateau ordi;
-	struct Plateau bateauJoueur;
-	struct Plateau bateauOrdi;
-};*/
+int alive(struct Plateau *plateau);
+struct Bateau creerBateau();
+void afficherPlateau(struct Plateau *plateau);
+void initialiserJeu(struct Plateau *plateau);
+void libererJeu(struct Plateau *plateau);
+int estEmplacementLibre(struct Jeu *jeu, int ligne, int colonne, int taille, int orientation) ;
+void placerBateau(struct Jeu *jeu);
+void placerBatOrdi(struct Jeu *jeu);
+void tourDeJeuJoueur(struct Jeu *jeu);
+void tourDeJeuOrdinateur(struct Jeu *jeu);
 #endif
