@@ -39,8 +39,8 @@ int main(){
 	initialiserJeu(&jeu.bateauOrdi);
 	
 	
-	struct Bateau* bateaux = placerBateau(&jeu);
-	struct Bateau* batOrdi = placerBatOrdi(&jeu);
+	placerBateau(&jeu);
+	placerBatOrdi(&jeu);
 	
 	
 	
