@@ -149,7 +149,7 @@ int estEmplacementLibre(struct Jeu *jeu, int ligne, int colonne, int taille, int
  * @return An array of boats placed on the player's board.
  */
 
-struct Bateau* placerBateau(struct Jeu *jeu) {
+void placerBateau(struct Jeu *jeu) {
     struct Bateau* bateaux = malloc(N_BATEAU * sizeof(struct Bateau));
     if(bateaux == NULL){
     	printf("erreur d'allocation");
@@ -181,7 +181,7 @@ struct Bateau* placerBateau(struct Jeu *jeu) {
             }
         }
     }
-    return bateaux;
+	free(bateaux);
 };
 
 
@@ -194,7 +194,7 @@ struct Bateau* placerBateau(struct Jeu *jeu) {
  * @return An array of boats placed on the computer's board.
  */
  
-struct Bateau* placerBatOrdi(struct Jeu *jeu){
+void placerBatOrdi(struct Jeu *jeu){
 	struct Bateau* batOrdix = malloc(N_BATEAU * sizeof(struct Bateau));
 	if(batOrdix == NULL){
 		printf("erreur d'allocation");
@@ -227,7 +227,6 @@ struct Bateau* placerBatOrdi(struct Jeu *jeu){
 		    	}
 		}
 	}
-	    return batOrdix;
+	free(batOrdix);
 };
-
 
