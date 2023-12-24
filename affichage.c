@@ -16,24 +16,32 @@
  *
  * @param plateau Pointer to the game board struct.
  */
+
 void afficherPlateau(struct Plateau *plateau) {
+    // column number
+    printf("   ");
+    for (int j = 0; j < plateau->taille; j++) {
+        printf("%5d", j);
+    }
+    printf("\n");
+
     for (int i = 0; i < plateau->taille; i++) {
-        
+        printf("   ");
         for (int j = 0; j < plateau->taille; j++) {
             printf("+----");
         }
         printf("+\n");
 
-        
+        // line number
+        printf("%2d ", i);
         for (int j = 0; j < plateau->taille; j++) {
             printf("| %2d ", plateau->plato[i][j]);
         }
         printf("|\n");
     }
-
-   
+	printf("   ");
     for (int j = 0; j < plateau->taille; j++) {
         printf("+----");
     }
     printf("+\n");
-};
+}
