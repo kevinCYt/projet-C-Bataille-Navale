@@ -59,18 +59,17 @@ int main(){
 		
 		// Check if computer's boats are still alive
 		int batOrdiEnVie;
-		batOrdiEnVie = 0;
+		batOrdiEnVie=0;
 		
 		for (int i = 0; i < N_BATEAU; i++) {
-		    if (EnVie(&batOrdi[i], &jeu.bateauOrdi)){
+		    if (alive(&jeu.bateauOrdi)){
 		    	batOrdiEnVie = 1; //at least 1 boat is alive
-		    	break;		//no need to continue the loop since there's one alive
+		    	
 		    }
 		}
 		if (batOrdiEnVie) {
 		    printf("there's still boat alive !\n");
-		} 
-		else {
+		} else {
 		    printf("every boat is WRECK , you WIN!\n");
 		    FIN=1;
 		}
@@ -84,16 +83,14 @@ int main(){
 		
 
 		for (int i = 0; i < N_BATEAU; i++) {
-		    if (EnVie(&bateaux[i], &jeu.bateauJoueur)) {
+		    if (alive(&jeu.bateauJoueur)) {
 		        bateauxEnVie = 1; //at least 1 boat is alive
-			break;		//no need to continue the loop since there's one alive
 		    }
 		}
 
 		if (bateauxEnVie) {
 		    printf("there's still boat alive  !\n");
-		} 
-		else {
+		} else {
 		    printf("every boat is WRECK , you lose!\n");
 		    FIN=1;
 		}
@@ -115,5 +112,3 @@ int main(){
 	libererJeu(&jeu.bateauOrdi); 
 	return 0;
 }
-
-
