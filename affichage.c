@@ -20,20 +20,20 @@ void afficherPlateau(struct Plateau *plateau) {
     for (int i = 0; i < plateau->taille; i++) {
         
         for (int j = 0; j < plateau->taille; j++) {
-            printf("+---");
+            printf("+----");
         }
         printf("+\n");
 
         
         for (int j = 0; j < plateau->taille; j++) {
-            printf("| %d ", plateau->plato[i][j]);
+            printf("| %2d ", plateau->plato[i][j]);
         }
         printf("|\n");
     }
 
    
     for (int j = 0; j < plateau->taille; j++) {
-        printf("+---");
+        printf("+----");
     }
     printf("+\n");
 };
