@@ -54,7 +54,8 @@ int main(){
 		
 		
 		// Check if computer's boats are still alive
-		int batOrdiEnVie = 0;
+		int batOrdiEnVie;
+		batOrdiEnVie = 0;
 		
 		for (int i = 0; i < N_BATEAU; i++) {
 		    if (EnVie(&batOrdi[i], &jeu.bateauOrdi)){
@@ -66,7 +67,7 @@ int main(){
 		    printf("there's still boat alive !\n");
 		} 
 		else {
-		    printf("Tvery boat is WRECK , you WIN!\n");
+		    printf("every boat is WRECK , you WIN!\n");
 		    FIN=1;
 		}
 		    
@@ -75,7 +76,7 @@ int main(){
 		
 		// Check if player's boats are still alive
 		int bateauxEnVie;
-		
+		bateauxEnVie = 0;
 		
 
 		for (int i = 0; i < N_BATEAU; i++) {
